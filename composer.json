@@ -1,0 +1,30 @@
+{
+  "name": "hurtcode/configure-yaml",
+  "description": "Yaml based library for configurations",
+  "type": "library",
+  "keywords": [
+    "configurations",
+    "config",
+    "helper",
+    "yaml"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kaliyev Kirill",
+      "email": "kiryakz2000@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "8.*",
+    "hurtcode/configure": "1.*",
+    "psr/container": "2.*|1.*",
+    "symfony/yaml": "5.*",
+    "yiisoft/json": "1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hurtcode\\Config\\Yaml\\": "src/"
+    }
+  }
+}
