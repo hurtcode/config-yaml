@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Hurtcode\Config\Yaml;
 
 use Hurtcode\Config\{ConfigInterface, ConfigureException};
-use JsonException;
 use Yiisoft\Json\Json;
+use JsonException;
 
 /**
  * Configuration resources

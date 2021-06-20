@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Hurtcode\Config\Yaml\Tag;
 
+use Hurtcode\Config\Yaml\Processor\CallableProcessor;
+use Hurtcode\Config\Yaml\Processor\InterpretProcessor;
+use Hurtcode\Config\Yaml\Processor\MergeProcessor;
+use Hurtcode\Config\Yaml\Processor\SubConfigurationProcessor;
+use Hurtcode\Config\Yaml\Processor\VariableProcessor;
+
 /**
  * List of available tags
  *
@@ -14,13 +20,8 @@ namespace Hurtcode\Config\Yaml\Tag;
  */
 final class Tag
 {
-    /**
-     * Helps to highlight callback
-     *
-     * Callable tag should contain list with name
-     * of callable function and arguments
-     */
-    public const CALLABLE = 'callable';
+    /** @see CallableProcessor */
+    public const CALLABLE = 'call';
     /**
      * Determines environment directory
      */
@@ -30,26 +31,16 @@ final class Tag
      * (works only with strings)
      */
     public const CONCATENATE = 'concatenate';
-    /**
-     * Indicates that next values will be merged in one
-     * (works with lists and arrays)
-     */
+    /** @see MergeProcessor */
     public const MERGE = 'merge';
-    /**
-     * Shows next value  will be interpreted like code
-     */
+    /** @see InterpretProcessor */
     public const INTERPRET = 'interpret';
-    /**
-     * Means that current config will be get from
-     * another file
-     */
-    public const SUB_CONF = 'subconf';
+    /** @see SubConfigurationProcessor */
+    public const SUB_CONF = 'sub';
     /**
      * This tag helps to get some value from array
      */
     public const GET = 'get';
-    /**
-     * This tag need to create global configuration variables
-     */
+    /** @see VariableProcessor */
     public const VARIABLE = 'var';
 }

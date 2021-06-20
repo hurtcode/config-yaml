@@ -89,7 +89,7 @@ final class Compiler implements CompilerInterface
     private function processTaggedValue(TaggedValue $taggedValue): mixed
     {
         list($tag, $value) = (new TaggedValueExtractor($taggedValue))->extract();
-        $value = $this->prepareValue($value);
+        $this->prepareValue($value);
         return $this->factory->getProcessor($tag)->process($value);
     }
 
@@ -100,20 +100,17 @@ final class Compiler implements CompilerInterface
      * tagged value
      *
      * @param mixed $value
-     *
-     * @return mixed
-     *
+     **
      * @throws ConfigureException
      */
-    private function prepareValue(mixed $value): mixed
+    private function prepareValue(mixed &$value):void
     {
         if (is_array($value)) {
             foreach ($value as &$element) {
-                $element = $this->prepareValue($element);
+                $this->prepareValue($element);
             }
         } elseif ($value instanceof TaggedValue) {
             $value = $this->processTaggedValue($value);
         }
-        return $value;
     }
 }
