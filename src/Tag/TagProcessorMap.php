@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace Hurtcode\Config\Yaml\Tag;
 
-use Hurtcode\Config\Yaml\Processor\{CallableProcessor,
-    InterpretProcessor,
-    MergeProcessor,
+use Hurtcode\Config\Yaml\Processor\{
     SubConfigurationProcessor,
-    VariableProcessor
+    ConcatenateProcessor,
+    EnvironmentProcessor,
+    InterpretProcessor,
+    CallableProcessor,
+    VariableProcessor,
+    MergeProcessor,
+    GetProcessor,
 };
 
 /**
@@ -33,6 +37,9 @@ final class TagProcessorMap implements TagProcessorsMapInterface
             Tag::INTERPRET => InterpretProcessor::class,
             Tag::VARIABLE => VariableProcessor::class,
             Tag::CALLABLE => CallableProcessor::class,
+            Tag::CONCATENATE => ConcatenateProcessor::class,
+            Tag::GET => GetProcessor::class,
+            Tag::ENV => EnvironmentProcessor::class
         ];
     }
 }

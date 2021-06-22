@@ -88,9 +88,23 @@ final class Compiler implements CompilerInterface
      */
     private function processTaggedValue(TaggedValue $taggedValue): mixed
     {
-        list($tag, $value) = (new TaggedValueExtractor($taggedValue))->extract();
+        list($tag, $value) = $this->extractTaggedValue($taggedValue);
         $this->prepareValue($value);
         return $this->factory->getProcessor($tag)->process($value);
+    }
+
+    /**
+     * Extracts tagged value object
+     *
+     * Unpacks object in array with tag name and tag value
+     *
+     * @param TaggedValue $taggedValue
+     *
+     * @return array<string,string>
+     */
+    private function extractTaggedValue(TaggedValue $taggedValue): array
+    {
+        return [$taggedValue->getTag(), $taggedValue->getValue()];
     }
 
     /**
@@ -103,7 +117,7 @@ final class Compiler implements CompilerInterface
      **
      * @throws ConfigureException
      */
-    private function prepareValue(mixed &$value):void
+    private function prepareValue(mixed &$value): void
     {
         if (is_array($value)) {
             foreach ($value as &$element) {

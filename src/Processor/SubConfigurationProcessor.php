@@ -18,9 +18,9 @@ use Hurtcode\Config\ConfigureException;
  * place where the tag has been used. The configuration file path is relative to the
  * path to the configuration folder<br>
  * Tag rules:
- *  - value has to be string
+ *  - Value has to be string
  *
- * Example:
+ * _Example:_
  * ```yaml
  *
  * !sub path/in/depth/file

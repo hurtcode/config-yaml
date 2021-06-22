@@ -21,7 +21,7 @@ use Hurtcode\Config\ConfigureException;
  *  - Value has to be string.
  *  - Value has to be in 'container'. It means you has to set variable before call it!.
  *
- * Example:
+ * _Example:_
  * ```yaml
  *
  * !var {set: variable, value: some value'}
