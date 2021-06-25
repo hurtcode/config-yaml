@@ -21,7 +21,7 @@ use yii\helpers\ArrayHelper;
  *  - 'name' has to be string
  *  - If you pass args as array it has to be indexed (without string keys)
  *
- * Example:
+ * __Example:__
  * ```yaml
  *
  * !call

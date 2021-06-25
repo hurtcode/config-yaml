@@ -16,11 +16,11 @@ use Yiisoft\Arrays\ArrayHelper;
  *
  * Merges tag values in one array. Uses Yiisoft/ArrayHelper.<br>
  * Tag rules:
- *  - tag value has to be array or list
- *  - tag has to contain at list 2 element
- *  - each element has be array or list
+ *  - Tag value has to be array or list
+ *  - Tag has to contain at least 2 element
+ *  - Each element has be array or list
  *
- * Example:
+ * _Example:_
  * ```yaml
  *
  * !merge

@@ -16,11 +16,11 @@ use Hurtcode\Config\ConfigureException;
  * Get processor helps to get some curtain value from another configuration or list.
  * To use it you have to specify `key` (what you want) and `from` (where from need to get).<br>
  * Tag rules:
- *  - value has to be list with `key` and `from` keys.
+ *  - Value has to be list with `key` and `from` keys.
  *  - `key` has to be string (for associative array) or int (for indexed array)
  *  - `from` has to be array or list
  *
- * Example:
+ * _Example:_
  * ```yaml
  *
  * !get {key:element, from: {element: value}}
