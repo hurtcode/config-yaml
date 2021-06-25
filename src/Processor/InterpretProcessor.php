@@ -17,9 +17,9 @@ use Throwable;
  * This processor interprets incoming expression as php code. Be careful with this.
  * Incoming strings wraps by template `return {value};` and sends in `eval` function.<br>
  * Tag rules:
- *  - value has to be string
+ *  - Value has to be string
  *
- * Example:
+ * _Example:_
  * ```yaml
  *
  * !interpret '$_SERVER['REQUEST_TIME']'
