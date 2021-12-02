@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Hurtcode\Config\Yaml\Processor;
 
 use Hurtcode\Config\ConfigureException;
-use yii\helpers\ArrayHelper;
+use Yiisoft\Arrays\ArrayHelper;
 
 /**
  * Callable processor
